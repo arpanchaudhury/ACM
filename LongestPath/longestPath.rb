@@ -6,7 +6,7 @@ class Graph
 		@graph = graph
 	end
 
-	def bfs(startnode)
+	def bfs(startnode) # function to find the longest path from a given start node in an acyclic graph
 		a = Array.new
 		a[startnode] = 0
 		queue = Queue.new
@@ -26,23 +26,21 @@ class Graph
 	end
 end
 
+# processing the input
 infile = File.open("./input.txt")
-
 nodes = infile.readline.to_i
 graph = Hash.new
 nodes.times do |i|
 	graph[i+1] = []
 end
-
 start = infile.readline.to_i
-
 while !(infile.eof?)
 	a = infile.readline.split
 	graph[a[0].to_i].push(a[1].to_i)
 end
 
+# processing the output
 mygraph = Graph.new(graph)
-
 outfile = File.open("./output.txt","w")
 outfile.write(mygraph.bfs(start))
 
