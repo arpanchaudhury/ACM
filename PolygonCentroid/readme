@@ -1,0 +1,16 @@
+Center of Masses
+================
+
+Find out the center of masses of a convex polygon.
+
+
+Input 
+=====
+
+A series of convex polygons, defined as a number n ( n <= 100 ) stating the number of points of the polygon, followed by n different pairs of integers (in no particular order), denoting the x and y coordinates of each point. The input is finished by a fake "polygon" with m (m < 3) points, which should not be processed.
+
+
+Output 
+======
+
+For each polygon, a single line with the coordinates x and y of the center of masses of that polygon, rounded to three decimal digits.
