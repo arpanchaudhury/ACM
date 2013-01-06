@@ -5,6 +5,7 @@ class Polygon
 	
 	def rearrange
 		
+		self
 	end
 
 	def centroid
@@ -26,5 +27,4 @@ class Polygon
 end
 
 myPolygon = Polygon.new([[0,1],[1,1],[1,0],[0,0]])
-p myPolygon.centroid
-
+p myPolygon.rearrange.centroid
