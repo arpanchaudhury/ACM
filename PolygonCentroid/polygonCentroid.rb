@@ -1,10 +1,29 @@
+def findPointsLeft(point_L,point_R,points)
+	points.select do |x,y|
+		if (point_R[0]-point_L[0]) * (y-point_L[1]) - (point_R[1]-point_L[1]) * (x -point_L[0]) > 0
+			[x,y]
+		end	
+	end
+end
+
+def findPointsRight(point_L,point_R,points)
+	points.select do |x,y|
+		if (point_R[0]-point_L[0]) * (y-point_L[1]) - (point_R[1]-point_L[1]) * (x -point_L[0]) < 0
+			[x,y]		
+		end	
+	end
+end
+
 class Polygon
 	def initialize(vertices)
 		@vertices = vertices 
 	end
 	
 	def rearrange
-		
+		@vertices = @vertices.sort_by {|e| e[0]}
+		set_L = findPointsLeft(@vertices.first, @vertices.last, @vertices).sort_by {|e| e[0]}	
+		set_R = findPointsRight(@vertices.first, @vertices.last, @vertices).sort_by {|e| e[0]}.reverse
+		@vertices = [@vertices.first] | set_L | [@vertices.last] | set_R 
 		self
 	end
 
@@ -26,5 +45,5 @@ class Polygon
 	end
 end
 
-myPolygon = Polygon.new([[0,1],[1,1],[1,0],[0,0]])
+myPolygon = Polygon.new([[-6,-3],[-4,-10],[-4,-4],[-9,-8],[-3,-6],[-7,-12],[-8,-3]])
 p myPolygon.rearrange.centroid
