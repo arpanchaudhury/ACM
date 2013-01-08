@@ -38,6 +38,7 @@ while !(infile.eof?)
 	a = infile.readline.split
 	graph[a[0].to_i].push(a[1].to_i)
 end
+infile.close
 
 # processing the output
 mygraph = Graph.new(graph)
