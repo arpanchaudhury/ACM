@@ -44,4 +44,4 @@ infile.close
 mygraph = Graph.new(graph)
 outfile = File.open("./output.txt","w")
 outfile.write(mygraph.bfs(start))
-output.close
+outfile.close
