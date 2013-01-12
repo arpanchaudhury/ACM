@@ -57,7 +57,7 @@ end
 infile.close
 
 #processing the output
-myPolygon = Polygon.new([[-6,-3],[-4,-10],[-4,-4],[-9,-8],[-3,-6],[-7,-12],[-8,-3]])
+myPolygon = Polygon.new(vertices)
 outfile = File.open("./output.txt","w")
 outfile.write(myPolygon.rearrange.centroid)
 outfile.close
