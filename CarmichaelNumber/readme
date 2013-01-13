@@ -1,0 +1,28 @@
+Carmichael Number
+=================
+
+An important topic nowadays in computer science is cryptography. Some people even think that cryptography is the only important field in computer science, and that life would not matter at all without cryptography.  Alvaro is one of such persons, and is designing a set of cryptographic procedures for cooking paella. Some of the cryptographic algorithms he is implementing make use of big prime numbers. However, checking if a big number is prime is not so easy. An exhaustive approach can require the division of the number by all the prime numbers smaller or equal than its square root. For big numbers, the amount of time and storage needed for such operations would certainly ruin the paella.
+
+However, some probabilistic tests exist that offer high confidence at low cost. One of them is the Fermat test.
+
+Let a be a random number between 2 and n - 1 (being n the number whose primality we are testing). Then, n is probably prime if the following equation holds: 
+
+					(a ** n) mod n = a
+
+If a number passes the Fermat test several times then it is prime with a high probability.
+
+Unfortunately, there are bad news. Some numbers that are not prime still pass the Fermat test with every number smaller than themselves. These numbers are called Carmichael numbers.
+
+In this problem you are asked to write a program to test if a given number is a Carmichael number. Hopefully, the teams that fulfill the task will one day be able to taste a delicious portion of encrypted paella. As a side note, we need to mention that, according to Alvaro, the main advantage of encrypted paella over conventional paella is that nobody but you knows what you are eating.
+
+
+Input
+=====
+
+The input will consist of a series of lines, each containing a small positive number n ( 2 < n < 65000). A number n = 0 will mark the end of the input, and must not be processed.
+
+
+Output
+======
+
+For each number in the input, you have to print if it is a Carmichael number or not, as shown in the sample output.
