@@ -1,0 +1,26 @@
+Packing Polygons
+================
+
+Given a polygon of n points (not necessarily convex), your goal is to say whether there is a circle of a given a radius R that contains the polygon or not.
+
+
+Input 
+=====
+
+The input consists of several input cases. The first line of each input case is the number n (with n < 100) of vertices in the polygon. Then you are given n lines each containing a couple of integers that define the coordinates of the vertices. The last line of the input case will be a real number indicating the radius R of the circle.
+
+The end of the input will be signaled by an input case with n = 0 vertices, that must not be processed.
+
+You may assume that no vertex will appear twice in any given input case.
+
+
+Output
+======
+
+If the polygon can be packed in a circle of the given radius you have to print:
+
+	The polygon can be packed in the circle.
+
+If the polygon cannot be packed you have to print:
+
+	There is no way of packing that polygon.
