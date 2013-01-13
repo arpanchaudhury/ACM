@@ -7,7 +7,7 @@ However, some probabilistic tests exist that offer high confidence at low cost. 
 
 Let a be a random number between 2 and n - 1 (being n the number whose primality we are testing). Then, n is probably prime if the following equation holds: 
 
-					(a ** n) mod n = a
+				(a ** n) mod n = a
 
 If a number passes the Fermat test several times then it is prime with a high probability.
 
