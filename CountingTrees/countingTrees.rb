@@ -1,3 +1,4 @@
+#finding factorial of a positive integer
 def fact(n)
 	if n == 0
 		return 1
@@ -6,6 +7,7 @@ def fact(n)
 	end
 end
 
+#counting number of unlabeled binary trees that can be formed
 def treeCount(noOfNodes)	
 	memoizer = {}
 	if noOfNodes == 0
@@ -27,10 +29,12 @@ def treeCount(noOfNodes)
 	end
 end
 
+#processing the input
 infile = File.open("./input.txt")
 noOfNodes = infile.readline.to_i
 infile.close
 
+#processing the output
 outfile = File.open("./output.txt","w")
-outfile.write(fact(noOfNodes) * treeCount(noOfNodes))
+outfile.write(fact(noOfNodes) * treeCount(noOfNodes)) # gives the number of labeled binary trees
 outfile.close
